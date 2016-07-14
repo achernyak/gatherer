@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
-
   has_many :tasks
+
+  validates :name, presence: true
 
   def self.velocity_length_in_days
     21
