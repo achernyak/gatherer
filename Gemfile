@@ -28,6 +28,10 @@ gem 'spring',        group: :development
 
 group :development, :tst do
   gem 'rspec-rails', '~> 3.1'
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'method_source'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
