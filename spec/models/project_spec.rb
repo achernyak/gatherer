@@ -52,7 +52,7 @@ RSpec.describe Project do
     end
 
     it "knows its rate" do
-      expect(project.current_rate).to eq(1.0/7)
+      expect(project.current_rate).to eq(1.0 / 7)
     end
 
     it "knows its projected time remaining" do
@@ -64,6 +64,19 @@ RSpec.describe Project do
       expect(project).not_to be_on_schedule
       project.due_date = 6.months.from_now
       expect(project).to be_on_schedule
+    end
+  end
+
+  describe 'task order' do
+    let(:project) { Project.create(name: 'Project') }
+
+    it 'gives me the order of the first task in an empy project' do
+      expect(project.next_task_order).to eq(1)
+    end
+
+    it 'gives me the order of the next task in a project' do
+      project.tasks.create(project_order: 3)
+      expect(project.next_task_order).to eq(4)
     end
   end
 end

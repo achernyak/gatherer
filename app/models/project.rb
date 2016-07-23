@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  has_many :tasks
+  has_many :tasks, -> { order 'project_order ASC' }
 
   validates :name, presence: true
 
@@ -38,5 +38,10 @@ class Project < ActiveRecord::Base
   def on_schedule?
     return false if projected_days_remaining.nan? || projected_days_remaining.infinite?
     (Date.today + projected_days_remaining) <= due_date
+  end
+
+  def next_task_order
+    return 1 if tasks.empty?
+    (tasks.last.project_order || task.size) + 1
   end
 end

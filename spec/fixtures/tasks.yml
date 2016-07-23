@@ -3,9 +3,11 @@ one:
   title: Hunt the aliens
   size: 1
   completed_at:
+  project_order: 1
 
 two:
   project: bluebook
   title: Write a book
   size: 1
   completed_at:
+  project_order: 2

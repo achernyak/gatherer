@@ -1,0 +1,19 @@
+<h2>Project: <%= @project.name %></h2>
+
+<h3>Existing Tasks:</h3>
+
+<table>
+    <thead>
+        <tr>Name</tr>
+        <tr>Size</tr>
+    </thead>
+    <tbody>
+	<% @project.tasks.each do |task| %>
+	    <tr>
+		<td class="name"><%= task.title %></td>
+		<td class="size"><%= task.size %></td>
+		<td class="completed"><%= task.completed_at.to_s %></td>
+	    </tr>
+	<% end %>
+    </tbody>
+</table>
