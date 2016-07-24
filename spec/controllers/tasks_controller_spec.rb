@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe TasksController, type: :controller do
-  before(:example) do
+  before do
     ActionMailer::Base.deliveries.clear
+    sign_in User.create!(email: 'rspec@example.com', password: 'password')
   end
 
   describe "PATCH update" do

@@ -2,6 +2,11 @@ require 'rails_helper'
 
 describe "adding a new task" do
   fixtures :all
+  include Warden::Test::Helpers
+
+  before do
+    login_as users(:user)
+  end
   
   it "can add and reorder a task" do
     visit project_path(projects(:bluebook))

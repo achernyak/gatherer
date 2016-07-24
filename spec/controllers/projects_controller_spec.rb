@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
+  before do
+    sign_in User.create!(email: 'rspec@example.com', password: 'password')
+  end
+
   describe "POST create" do
     it "creates a project" do
       fake_action = instance_double(CreatesProject, create: true)
