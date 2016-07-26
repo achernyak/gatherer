@@ -1,10 +1,16 @@
 class Project < ActiveRecord::Base
   has_many :tasks, -> { order 'project_order ASC' }
+  has_many :roles
+  has_many :users, through: :roles
 
   validates :name, presence: true
 
   def self.velocity_length_in_days
     21
+  end
+
+  def self.all_public
+    where(public: true)
   end
 
   def incomplete_tasks

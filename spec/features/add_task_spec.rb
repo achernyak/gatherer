@@ -6,6 +6,7 @@ describe "adding a new task" do
 
   before do
     login_as users(:user)
+    projects(:bluebook).roles.create(user: users(:user))
   end
   
   it "can add and reorder a task" do

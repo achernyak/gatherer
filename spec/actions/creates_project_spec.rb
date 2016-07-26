@@ -46,4 +46,11 @@ describe CreatesProject do
       end
     end
   end
+
+  it 'adds users to the project' do
+    user = User.new
+    creator = CreatesProject.new(name: 'Project Runway', users: [user])
+    creator.build
+    expect(creator.project.users).to eq([user])
+  end
 end

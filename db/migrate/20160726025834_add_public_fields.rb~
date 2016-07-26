@@ -1,0 +1,4 @@
+class AddPublicFields < ActiveRecord::Migration
+  def change
+  end
+end
