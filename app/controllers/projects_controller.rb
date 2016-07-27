@@ -29,4 +29,13 @@ class ProjectsController < ApplicationController
       return
     end
   end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(params[:project].permit(:name))
+      redirect_to @project, notice: "'project was successfully updated.'"
+    else
+      redner action: 'edit'
+    end
+  end
 end

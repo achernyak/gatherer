@@ -53,4 +53,10 @@ RSpec.describe ProjectsController, type: :controller do
       expect(response).to redirect_to(new_user_session_path)
     end
   end
+
+  it 'does not allow a user to make a project public if it is not theirs' do
+    sample = Project.create!(name: 'Test Project', public: false)
+    patch :update, id: sample.id, project: {public: true}
+    expect(sample.reload.public).to be_falsy
+  end
 end

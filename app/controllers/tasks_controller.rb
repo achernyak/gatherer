@@ -17,6 +17,10 @@ class TasksController < ApplicationController
 
   def create
     @project = Project.find(params[:task][:project_id])
+    unless current_user.can_view?(@project)
+      redirect_to new_user_session_path
+      return
+    end
     @project.tasks.create(title: params[:task][:title],
       size: params[:task][:size],
       project_order: @project.next_task_order)
