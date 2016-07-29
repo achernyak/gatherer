@@ -1,0 +1,4 @@
+class AddUserToTask < ActiveRecord::Migration
+  def change
+  end
+end

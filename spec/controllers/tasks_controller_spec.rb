@@ -32,6 +32,8 @@ RSpec.describe TasksController, type: :controller do
     let(:project) { Project.create!(name: 'Project Runway') }
 
     it 'allows a user to createa  task for aproject they belog to' do
+      p project
+      p user
       user.projects << project
       user.save!
       post :create, task: {project_id: project.id, title: 'just do it', size: 1 }

@@ -41,4 +41,17 @@ describe User do
       expect(user).to be_able_to_see(project_1)
     end
   end
+
+  describe 'avatars' do
+    let(:user) { User.new(email: 'test@example.com') }
+    let(:fake_adapter) { instance_double(AvatarAdapter) }
+
+    it 'can get a twitter avatar URL' do
+      allow(fake_adapter).to receive(:image_url).and_return('fake_url')
+      allow(AvatarAdapter).to receive(:new).with(user).and_return(fake_adapter)
+      user.avatar_url
+      expect(fake_adapter).to have_received(:image_url)
+      expect(AvatarAdapter).to have_received(:new)
+    end
+  end
 end

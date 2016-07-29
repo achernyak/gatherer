@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - Basic eEcwZ2o0WERKdGdsZ0R3VW1Xc3lVU0dvMzphOUtVbXhQSDZkckk2SDdOb00zR2tpYXB1U0J5Qm5OeGhhOWZ4MjFESXNwbEJDNTduSA==
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '152'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 28 Jul 2016 16:49:35 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Thu, 28 Jul 2016 16:49:35 GMT
+      Ml:
+      - S
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A146972457525908606; Domain=.twitter.com; Path=/; Expires=Sat,
+        28-Jul-2018 16:49:35 UTC
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 4b58417dba424185bad11b0e8ce15533
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Response-Time:
+      - '136'
+      X-Transaction:
+      - 003ee51000474417
+      X-Tsa-Request-Body-Time:
+      - '0'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Ua-Compatible:
+      - IE=edge,chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"bearer","access_token":"AAAAAAAAAAAAAAAAAAAAAOgrwQAAAAAAiQ573DKYJ7NlLyknI6nej9TJ92g%3DB5lC9b4DOxdA6ouye2DagWCbwn45jd3Nfj5EVRGMEwLMAwTn55"}'
+    http_version: 
+  recorded_at: Thu, 28 Jul 2016 16:49:35 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/users/show.json?screen_name=noelrap
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - Bearer AAAAAAAAAAAAAAAAAAAAAOgrwQAAAAAAiQ573DKYJ7NlLyknI6nej9TJ92g%3DB5lC9b4DOxdA6ouye2DagWCbwn45jd3Nfj5EVRGMEwLMAwTn55
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '1183'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 28 Jul 2016 16:49:35 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Thu, 28 Jul 2016 16:49:35 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A146972457569976797; Domain=.twitter.com; Path=/; Expires=Sat,
+        28-Jul-2018 16:49:35 UTC
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read
+      X-Connection-Hash:
+      - 91d6d52ade9968eb32dcfeb10b353525
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '181'
+      X-Rate-Limit-Remaining:
+      - '180'
+      X-Rate-Limit-Reset:
+      - '1469725475'
+      X-Response-Time:
+      - '24'
+      X-Transaction:
+      - 00608ab900f9a43b
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":1515231,"id_str":"1515231","name":"Noel Rappin","screen_name":"noelrap","location":"Chicago
+        IL","profile_location":null,"description":"Noel Rappin is a developer at Table
+        XI. He is the author of Rails 4 Test Prescriptions, Trust-Driven Development,
+        and Master Space and Time With JavaScript.","url":"http:\/\/t.co\/2Mt0aaFfGL","entities":{"url":{"urls":[{"url":"http:\/\/t.co\/2Mt0aaFfGL","expanded_url":"http:\/\/www.noelrappin.com","display_url":"noelrappin.com","indices":[0,22]}]},"description":{"urls":[]}},"protected":false,"followers_count":2470,"friends_count":728,"listed_count":214,"created_at":"Mon
+        Mar 19 15:10:21 +0000 2007","favourites_count":526,"utc_offset":-18000,"time_zone":"Central
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":11097,"lang":"en","status":{"created_at":"Thu
+        Jul 28 14:58:36 +0000 2016","id":758678047407087622,"id_str":"758678047407087622","text":"\u201cMy
+        current favorite way of limiting RSpec runs is to limit the run to only tests
+        that are currently failing\u201d https:\/\/t.co\/OEpcCiJM1k","truncated":false,"entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[{"url":"https:\/\/t.co\/OEpcCiJM1k","expanded_url":"https:\/\/medium.com\/table-xi\/focus-your-rspec-workflow-4cd5798d2a3e#.ydt6sjvdv","display_url":"medium.com\/table-xi\/focus\u2026","indices":[110,133]}]},"source":"\u003ca
+        href=\"http:\/\/tapbots.com\/software\/tweetbot\/mac\" rel=\"nofollow\"\u003eTweetbot
+        for Mac\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":1,"favorited":false,"retweeted":false,"possibly_sensitive":false,"lang":"en"},"contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"9AE4E8","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/40008602\/head_shot_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/40008602\/head_shot_normal.jpg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/1515231\/1419793833","profile_link_color":"0000FF","profile_sidebar_border_color":"87BC44","profile_sidebar_fill_color":"E0FF92","profile_text_color":"000000","profile_use_background_image":true,"has_extended_profile":false,"default_profile":false,"default_profile_image":false,"following":null,"follow_request_sent":null,"notifications":null}'
+    http_version: 
+  recorded_at: Thu, 28 Jul 2016 16:49:35 GMT
+recorded_with: VCR 3.0.3

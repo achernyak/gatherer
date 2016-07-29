@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726025834) do
+ActiveRecord::Schema.define(version: 20160728161249) do
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160726025834) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "project_order"
+    t.integer  "user_id"
   end
 
   add_index "tasks", ["project_id"], name: "index_tasks_on_project_id"
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160726025834) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
+    t.string   "twitter_handle"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
